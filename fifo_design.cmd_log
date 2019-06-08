@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "C:/Xilinx/PRJ/designs/simple_fifo/fifo_design.xst" -ofn "C:/Xilinx/PRJ/designs/simple_fifo/fifo_design.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-3 fifo_design.ngc fifo_design.ngd  
+map -intstyle ise -p xc6slx9-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fifo_design_map.ncd fifo_design.ngd fifo_design.pcf 
+par -w -intstyle ise -ol high -mt off fifo_design_map.ncd fifo_design.ncd fifo_design.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml fifo_design.twx fifo_design.ncd -o fifo_design.twr fifo_design.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fifo_design.ucf -p xc6slx9-csg324-3 fifo_design.ngc fifo_design.ngd  
+map -intstyle ise -p xc6slx9-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fifo_design_map.ncd fifo_design.ngd fifo_design.pcf 
+par -w -intstyle ise -ol high -mt off fifo_design_map.ncd fifo_design.ncd fifo_design.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml fifo_design.twx fifo_design.ncd -o fifo_design.twr fifo_design.pcf -ucf fifo_design.ucf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fifo_design.ucf -p xc6slx9-csg324-3 fifo_design.ngc fifo_design.ngd  
+map -intstyle ise -p xc6slx9-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o fifo_design_map.ncd fifo_design.ngd fifo_design.pcf 
+par -w -intstyle ise -ol high -mt off fifo_design_map.ncd fifo_design.ncd fifo_design.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml fifo_design.twx fifo_design.ncd -o fifo_design.twr fifo_design.pcf -ucf fifo_design.ucf 

@@ -1,0 +1,31 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sat Jun 08 22:58:33 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+TIMEGRP wr_clk = BEL "count_wr1_0" BEL "count_wr1_1" BEL "count_wr1_2" BEL
+        "count_wr1_3" BEL "count_wr1_4" BEL "count_wr1_5" BEL "count_wr1_6"
+        BEL "count_wr1_7" BEL "count_wr_0" BEL "count_wr_1" BEL "count_wr_2"
+        BEL "count_wr_3" BEL "count_wr_4" BEL "count_wr_5" BEL "count_wr_6"
+        BEL "count_wr_7" BEL "wr_clk_BUFGP/BUFG" BEL "Mram_fifo_mem51/SP" BEL
+        "Mram_fifo_mem51/DP" BEL "Mram_fifo_mem52/SP" BEL "Mram_fifo_mem52/DP"
+        BEL "Mram_fifo_mem61/SP" BEL "Mram_fifo_mem61/DP" BEL
+        "Mram_fifo_mem62/SP" BEL "Mram_fifo_mem62/DP" BEL
+        "Mram_fifo_mem1_RAMA" BEL "Mram_fifo_mem1_RAMB" BEL
+        "Mram_fifo_mem1_RAMC" BEL "Mram_fifo_mem1_RAMD" BEL
+        "Mram_fifo_mem2_RAMA" BEL "Mram_fifo_mem2_RAMB" BEL
+        "Mram_fifo_mem2_RAMC" BEL "Mram_fifo_mem2_RAMD" BEL
+        "Mram_fifo_mem3_RAMA" BEL "Mram_fifo_mem3_RAMB" BEL
+        "Mram_fifo_mem3_RAMC" BEL "Mram_fifo_mem3_RAMD" BEL
+        "Mram_fifo_mem4_RAMA" BEL "Mram_fifo_mem4_RAMB" BEL
+        "Mram_fifo_mem4_RAMC" BEL "Mram_fifo_mem4_RAMD";
+TIMEGRP rd_clk = BEL "count_rd_0" BEL "count_rd_1" BEL "count_rd_2" BEL
+        "count_rd_3" BEL "count_rd_4" BEL "count_rd_5" BEL "count_rd_6" BEL
+        "count_rd_7" BEL "rd_clk_BUFGP/BUFG";
+TIMEGRP data_in_group = BEL "datain<7>" BEL "datain<6>" BEL "datain<5>" BEL
+        "datain<4>" BEL "datain<3>" BEL "datain<2>" BEL "datain<1>" BEL
+        "datain<0>";
+TS_rd_clk = PERIOD TIMEGRP "rd_clk" 5 ns HIGH 50%;
+TS_wr_clk = PERIOD TIMEGRP "wr_clk" 4 ns HIGH 50%;
+SCHEMATIC END;
+
